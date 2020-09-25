@@ -1,0 +1,42 @@
+package employeeWages;
+import java.util.*;
+public class WagesOfEmployee {
+	public static final int isPartTime=1;
+	public static final int isFullTime=2;
+	private final String company;
+	private final int empRate;
+	private final int noOfWorkingDays;
+	private final int maxHoursPerMonth;
+	
+	public WagesOfEmployee(String company, int empRate, int noOfWorkingDays, int maxHoursPerMonth) {
+		this.company = company;
+		this.empRate=empRate;
+		this.noOfWorkingDays=noOfWorkingDays;
+		this.maxHoursPerMonth=maxHoursPerMonth;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WagesOfEmployee company1 = new WagesOfEmployee("Flipkart", 20, 2, 10 );
+		int empHours=0, totalEmpHours=0, totalWorkingDays=0;
+		while(totalEmpHours<company1.maxHoursPerMonth&&totalWorkingDays<company1.noOfWorkingDays) {
+			totalWorkingDays++;
+			int empCheck=(int)Math.floor(Math.random()*10)%3;
+			switch(empCheck) {
+			case isPartTime:
+				empHours=4;
+				break;
+			case isFullTime:
+				empHours=8;
+				break;
+			default:
+				empHours=0;
+			}
+			totalEmpHours+=empHours;
+			
+		}
+		int totalEmpWage = totalEmpHours*company1.empRate;
+		System.out.println("Total Employee wage is: "+totalEmpWage+" who is working for the company: "+company1.company);
+		
+	}
+
+}
