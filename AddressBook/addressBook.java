@@ -1,5 +1,5 @@
 import java.util.*;
-public class bookadress {
+public class addressBook {
 static HashMap<String, contactInfo> mp = new HashMap<>();
 	//Method to add new contact
 	public static contactInfo addContact() {
