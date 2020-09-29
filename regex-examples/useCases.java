@@ -17,8 +17,8 @@ public class regexExample {
 		System.out.println("Input String matches regex - "+matcher2.matches());
 		
 		//UC3 - Email Verification
-		final String exp3 = "^([a-zA-Z0-9]+[a-zA-Z0-9\\._-]+)@([a-zA-Z0-9]+)\\.([a-zA-Z\\.]+)$";
-		final String input3 = "ab_-..c123@gmail.a";
+		final String exp3 = "^([a-zA-Z0-9\\_\\-]+)([\\.|\\-]{1}[a-zA-Z0-9]+)@([a-zA-Z0-9]+)\\.([a-zA-Z]{2,})(\\.[a-zA-Z] {2,})?$";
+		final String input3 = "ab_-.c123@gmail.com";
 		Pattern pattern3 = Pattern.compile(exp3);
 		Matcher matcher3 = pattern3.matcher(input3);
 		System.out.println("Input String matches regex - "+matcher3.matches());
@@ -34,8 +34,8 @@ public class regexExample {
 		
 		
 		//UC5 - Password Verification
-		final String exp5 = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,}$";
-		final String input5 = "Harshit9@";
+		final String exp5 = "(?=.*[A-Z])(?=.*[0-9])(?=[^@#$%]*[@#$%][^@#$%]*$).{8,}$";
+		final String input5 = "Harshit9@@";
 		Pattern pattern5 = Pattern.compile(exp5);
 		Matcher matcher5 = pattern5.matcher(input5);
 		System.out.println("Input String matches regex - "+matcher5.matches());
