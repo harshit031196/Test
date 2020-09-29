@@ -17,7 +17,7 @@ public class regexExample {
 		System.out.println("Input String matches regex - "+matcher2.matches());
 		
 		//UC3 - Email Verification
-		final String exp3 = "^([a-zA-Z0-9\\_\\-]+)([\\.|\\-]{1}[a-zA-Z0-9]+)@([a-zA-Z0-9]+)\\.([a-zA-Z]{2,})(\\.[a-zA-Z] {2,})?$";
+		final String exp3 = "^([a-zA-Z0-9\\_\\-]+)([\\.|\\-]{1}[a-zA-Z0-9]+)*@([a-zA-Z0-9]+)\\.([a-zA-Z]{2,})(\\.[a-zA-Z] {2,})?$";
 		final String input3 = "ab_-.c123@gmail.com";
 		Pattern pattern3 = Pattern.compile(exp3);
 		Matcher matcher3 = pattern3.matcher(input3);
