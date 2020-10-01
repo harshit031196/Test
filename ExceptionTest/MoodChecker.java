@@ -18,7 +18,6 @@ public class MoodChecker {
 			}
 		}catch(Exception e){
 			if(this.mood==null) {
-				System.out.println("NULL");
 				return "happy";
 			}else {
 				return "happy";
